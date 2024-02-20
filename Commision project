@@ -1,0 +1,36 @@
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double quarSales = 0;
+    
+    cout << "Enter the amount in sales: $";
+    cin >> quarSales;
+    
+    double commision = 0;
+    
+    if (quarSales > 0 && quarSales <= 20000)
+    {
+        commision = quarSales * .05;
+        cout << "Your Total commision is: $" << commision;
+    }
+    //program has to calculate everything under 20000 at the same rate and the rest at a new rate like taxes
+    else if (quarSales > 20000 && quarSales <= 50000)
+    {
+        commision = (quarSales - 20000) * .07 + 1000;
+        cout << fixed << setprecision(2) << "Your Total commision is: $" << commision;
+    }
+    else if (quarSales > 50000)
+    {
+        commision = (quarSales - 50000) * .1 + 3100;
+        cout << fixed << setprecision(2) << "Your Total commision is: $" << commision;
+    }
+    else if (quarSales <= 0)
+    {
+        cout << "Error Reload Program";
+    }
+    return 0;
+}
